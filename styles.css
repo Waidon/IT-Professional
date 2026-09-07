@@ -1,26 +1,20 @@
 /* ==========================================================================
-   Big-Tech Enterprise Systems CSS Master Stylesheet
-   Palette: Google Blue/Green/Red, Microsoft Accent, Apple Slate Minimalist
-   Typography: Segoe UI, San Francisco (SF Pro), Roboto Enterprise Stack
+   Matte Black & White Minimalist Master Stylesheet
+   Typography: Segoe UI, San Francisco (SF Pro), Roboto
    ========================================================================== */
 
 :root {
-    /* Corporate UI Dark Core Canvas Palette */
-    --bg-base: #0d1117;
-    --bg-surface: rgba(22, 27, 34, 0.75);
-    --bg-card-hover: rgba(33, 38, 45, 0.9);
-    --text-main: #f0f6fc;
-    --text-muted: #8b949e;
+    /* Matte Black & Monochromatic Palette */
+    --bg-base: #121212;             /* Matte Black Base */
+    --bg-surface: #181818;          /* Dark Matte Surface */
+    --bg-card-hover: #222222;       /* Matte Card Elevation */
+    --text-main: #ffffff;           /* Crisp White */
+    --text-muted: #a0a0a0;          /* Soft Gray Accent */
     
-    /* Big-Tech Brand Exact Identity Core Signatures */
-    --tech-blue: #1a73e8;       /* Google/Microsoft Core Blue */
-    --tech-red: #ea4335;        /* Google Corporate Red */
-    --tech-yellow: #fbbc05;     /* Enterprise Asset Yellow */
-    --tech-green: #34a853;      /* Android/Ecosystem Green */
-    
-    /* Interactive Layer Constants */
-    --border-color: rgba(240, 246, 252, 0.1);
-    --border-hover: rgba(26, 115, 232, 0.45);
+    /* White Touch Accents */
+    --accent-white: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.4);
 }
 
 /* ==========================================================================
@@ -68,21 +62,21 @@ body {
 
 /* Section Blueprint Spacing */
 .section-padding {
-    padding: 100px 0 20px 0;
+    padding: 80px 0 20px 0;
 }
 
 .section-title {
     font-size: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.5px;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     color: var(--text-main);
-    border-left: 4px solid var(--tech-blue);
+    border-left: 4px solid var(--accent-white);
     padding-left: 16px;
 }
 
 /* ==========================================================================
-   2. 3D Interaction Engine Foundation
+   2. 3D Interaction & Card Foundation
    ========================================================================== */
 .card-3d {
     position: relative;
@@ -106,7 +100,7 @@ body {
     height: 100%;
     background: radial-gradient(
         300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
-        rgba(26, 115, 232, 0.06),
+        rgba(255, 255, 255, 0.05),
         transparent 80%
     );
     z-index: -1;
@@ -116,17 +110,18 @@ body {
 .card-3d:hover {
     border-color: var(--border-hover);
     background: var(--bg-card-hover);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(26, 115, 232, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
    3. Hero Interface Layout
    ========================================================================== */
 .hero-section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 0;
 }
 
 .hero-content {
@@ -142,8 +137,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--tech-blue) 25%, var(--tech-red) 25%, var(--tech-red) 50%, var(--tech-yellow) 50%, var(--tech-yellow) 75%, var(--tech-green) 75%);
+    height: 3px;
+    background: var(--text-main);
 }
 
 .glitch {
@@ -163,10 +158,17 @@ body {
 
 .tagline {
     color: var(--text-muted);
-    font-size: 1.05rem;
-    max-width: 620px;
+    font-size: 1rem;
+    max-width: 680px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ==========================================================================
@@ -174,7 +176,7 @@ body {
    ========================================================================== */
 .capabilities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 
@@ -185,12 +187,8 @@ body {
 .tech-icon {
     font-size: 2.2rem;
     margin-bottom: 24px;
+    color: var(--text-main);
 }
-
-.icon-blue { color: var(--tech-blue); }
-.icon-red { color: var(--tech-red); }
-.icon-yellow { color: var(--tech-yellow); }
-.icon-green { color: var(--tech-green); }
 
 .capability-card h3 {
     font-size: 1.3rem;
@@ -210,7 +208,7 @@ body {
 .blog-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
 }
 
 .blog-card {
@@ -223,7 +221,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 280px;
+    min-height: 250px;
     overflow: hidden;
     border-right: 1px solid var(--border-color);
 }
@@ -232,31 +230,27 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    filter: grayscale(20%);
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .blog-card:hover .blog-image {
     transform: scale(1.03);
+    filter: grayscale(0%);
 }
 
 .project-badge {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: rgba(26, 115, 232, 0.15);
-    border: 1px solid var(--tech-blue);
-    color: #dfebff;
+    background: #121212;
+    border: 1px solid var(--accent-white);
+    color: var(--text-main);
     padding: 6px 14px;
     font-size: 0.75rem;
     font-weight: 600;
     border-radius: 4px;
     text-transform: uppercase;
-}
-
-.badge-alt {
-    background: rgba(112, 0, 255, 0.15);
-    border-color: #7000ff;
-    color: #f0e6ff;
 }
 
 .blog-content {
@@ -288,7 +282,7 @@ body {
 }
 
 .blog-body-text {
-    border-top: 1px dashed rgba(240, 246, 252, 0.15);
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
     padding-top: 20px;
     margin-bottom: 25px;
 }
@@ -304,7 +298,7 @@ body {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .blog-body-text p:last-child { margin-bottom: 0; }
@@ -321,12 +315,10 @@ body {
     font-size: 0.75rem;
     font-weight: 600;
     border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
 }
-
-.tag-blue { background: rgba(26, 115, 232, 0.1); border: 1px solid rgba(26, 115, 232, 0.25); color: #9bc5ff; }
-.tag-red { background: rgba(234, 67, 53, 0.1); border: 1px solid rgba(234, 67, 53, 0.25); color: #ffaca5; }
-.tag-yellow { background: rgba(251, 188, 5, 0.1); border: 1px solid rgba(251, 188, 5, 0.25); color: #ffe293; }
-.tag-green { background: rgba(52, 168, 83, 0.1); border: 1px solid rgba(52, 168, 83, 0.25); color: #a9ffc1; }
 
 /* ==========================================================================
    6. Certification Grid & Lightbox Modal
@@ -350,7 +342,7 @@ body {
     text-align: center;
     padding: 1.25rem !important;
     width: 100%;
-    max-width: 260px; 
+    max-width: 280px; 
 }
 
 .cert-wrapper {
@@ -359,8 +351,8 @@ body {
     aspect-ratio: 4 / 3; 
     overflow: hidden;
     border-radius: 4px;
-    background-color: #1a202c; 
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #121212; 
+    border: 1px solid var(--border-color);
     cursor: pointer;
 }
 
@@ -377,7 +369,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 17, 23, 0.9);
+    background: rgba(18, 18, 18, 0.92);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -398,20 +390,20 @@ body {
     margin-top: 1rem;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #cccccc;
+    color: var(--text-muted);
     line-height: 1.4;
 }
 
-/* Lightbox Modal Configuration (Default Hidden State Fixed) */
+/* Lightbox Modal */
 .lightbox-modal {
-    display: none; /* Keeps modal hidden on initial page load */
+    display: none;
     position: fixed;
     z-index: 9999; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 12, 16, 0.96); 
+    background-color: rgba(10, 10, 10, 0.96); 
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -425,8 +417,8 @@ body {
     max-width: 90%;
     max-height: 80vh; 
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
     animation: zoomAnimationIn 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -437,17 +429,17 @@ body {
 
 .lightbox-close {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 25px;
+    right: 30px;
     color: var(--text-muted);
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 300;
     transition: color 0.2s ease;
     cursor: pointer;
 }
 
 .lightbox-close:hover {
-    color: var(--tech-red);
+    color: var(--text-main);
 }
 
 #lightboxCaption {
@@ -460,14 +452,14 @@ body {
 }
 
 /* ==========================================================================
-   7. Direct Transmission Social Footer
+   7. Footer Section
    ========================================================================== */
 .footer-section {
-    padding: 100px 0 40px 0;
+    padding: 80px 0 40px 0;
 }
 
 .footer-container {
-    padding: 50px 40px 20px 40px;
+    padding: 50px 30px 20px 30px;
 }
 
 .footer-branding {
@@ -489,43 +481,41 @@ body {
 
 .footer-links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .footer-link-card {
     display: flex;
     align-items: center;
     gap: 16px;
-    background: rgba(13, 17, 23, 0.6);
+    background: #121212;
     border: 1px solid var(--border-color);
-    padding: 20px;
+    padding: 18px;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.25s ease;
 }
 
 .footer-link-card:hover {
-    background: rgba(33, 38, 45, 0.8);
-    border-color: var(--tech-blue);
+    background: #222222;
+    border-color: var(--text-main);
     transform: translateY(-3px);
 }
 
 .link-icon-circle {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(240, 246, 252, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--text-main);
     flex-shrink: 0;
 }
-
-.icon-linkedin { color: #0077b5; }
-.icon-github { color: #afb7c1; }
 
 .link-details {
     display: flex;
@@ -541,7 +531,7 @@ body {
 }
 
 .link-details strong {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-main);
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -560,44 +550,44 @@ body {
 }
 
 /* ==========================================================================
-   8. Core Global Buttons
+   8. Buttons
    ========================================================================== */
 .btn {
     display: inline-block;
-    padding: 14px 30px;
+    padding: 14px 28px;
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 6px;
     text-decoration: none;
     transition: all 0.25s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-primary {
-    background: var(--tech-blue);
-    color: #fff;
-    border: 1px solid var(--tech-blue);
+    background: #ffffff;
+    color: #121212;
+    border: 1px solid #ffffff;
 }
 
 .btn-primary:hover {
-    background: rgba(26, 115, 232, 0.85);
-    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+    background: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--text-main);
     border: 1px solid var(--border-color);
-    margin-left: 15px;
 }
 
 .btn-secondary:hover {
-    background: rgba(240, 246, 252, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--text-main);
 }
 
 /* ==========================================================================
-   9. Mobile Optimization Viewport Blueprint
+   9. Mobile Responsiveness Adjustments
    ========================================================================== */
 @media (max-width: 992px) {
     .blog-card {
@@ -607,5 +597,56 @@ body {
     .blog-image-wrapper {
         border-right: none;
         border-bottom: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 0 16px;
+    }
+
+    .section-padding {
+        padding: 60px 0 20px 0;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .glitch {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .footer-container {
+        padding: 30px 16px 20px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .capabilities-grid,
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        max-width: 100%;
     }
 }
