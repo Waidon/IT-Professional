@@ -1,0 +1,611 @@
+/* ==========================================================================
+   Big-Tech Enterprise Systems CSS Master Stylesheet
+   Palette: Google Blue/Green/Red, Microsoft Accent, Apple Slate Minimalist
+   Typography: Segoe UI, San Francisco (SF Pro), Roboto Enterprise Stack
+   ========================================================================== */
+
+:root {
+    /* Corporate UI Dark Core Canvas Palette */
+    --bg-base: #0d1117;
+    --bg-surface: rgba(22, 27, 34, 0.75);
+    --bg-card-hover: rgba(33, 38, 45, 0.9);
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    
+    /* Big-Tech Brand Exact Identity Core Signatures */
+    --tech-blue: #1a73e8;       /* Google/Microsoft Core Blue */
+    --tech-red: #ea4335;        /* Google Corporate Red */
+    --tech-yellow: #fbbc05;     /* Enterprise Asset Yellow */
+    --tech-green: #34a853;      /* Android/Ecosystem Green */
+    
+    /* Interactive Layer Constants */
+    --border-color: rgba(240, 246, 252, 0.1);
+    --border-hover: rgba(26, 115, 232, 0.45);
+}
+
+/* ==========================================================================
+   1. Reset & Global Layout Rules
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background Particle Vector Layer */
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Global Content Wrapper */
+.portfolio-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section Blueprint Spacing */
+.section-padding {
+    padding: 100px 0 20px 0;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 45px;
+    color: var(--text-main);
+    border-left: 4px solid var(--tech-blue);
+    padding-left: 16px;
+}
+
+/* ==========================================================================
+   2. 3D Interaction Engine Foundation
+   ========================================================================== */
+.card-3d {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    transform-style: preserve-3d;
+    perspective: 1200px;
+}
+
+.card-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+        rgba(26, 115, 232, 0.06),
+        transparent 80%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.card-3d:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(26, 115, 232, 0.05);
+}
+
+/* ==========================================================================
+   3. Hero Interface Layout
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+    padding: 60px 40px;
+}
+
+.brand-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--tech-blue) 25%, var(--tech-red) 25%, var(--tech-red) 50%, var(--tech-yellow) 50%, var(--tech-yellow) 75%, var(--tech-green) 75%);
+}
+
+.glitch {
+    font-size: 3.25rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+.subtitle {
+    font-size: 1.35rem;
+    color: var(--text-main);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.tagline {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   4. Core Capabilities Matrix
+   ========================================================================== */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.capability-card {
+    padding: 35px;
+}
+
+.tech-icon {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+}
+
+.icon-blue { color: var(--tech-blue); }
+.icon-red { color: var(--tech-red); }
+.icon-yellow { color: var(--tech-yellow); }
+.icon-green { color: var(--tech-green); }
+
+.capability-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.capability-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. Blog-Style Engineering Logs & Projects
+   ========================================================================== */
+.blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.blog-card {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    padding: 0;
+}
+
+.blog-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    overflow: hidden;
+    border-right: 1px solid var(--border-color);
+}
+
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image {
+    transform: scale(1.03);
+}
+
+.project-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(26, 115, 232, 0.15);
+    border: 1px solid var(--tech-blue);
+    color: #dfebff;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge-alt {
+    background: rgba(112, 0, 255, 0.15);
+    border-color: #7000ff;
+    color: #f0e6ff;
+}
+
+.blog-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.blog-date i { margin-right: 6px; }
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.blog-excerpt {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.blog-body-text {
+    border-top: 1px dashed rgba(240, 246, 252, 0.15);
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+
+.blog-body-text h4 {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.blog-body-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.blog-body-text p:last-child { margin-bottom: 0; }
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tech-tags span {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.tag-blue { background: rgba(26, 115, 232, 0.1); border: 1px solid rgba(26, 115, 232, 0.25); color: #9bc5ff; }
+.tag-red { background: rgba(234, 67, 53, 0.1); border: 1px solid rgba(234, 67, 53, 0.25); color: #ffaca5; }
+.tag-yellow { background: rgba(251, 188, 5, 0.1); border: 1px solid rgba(251, 188, 5, 0.25); color: #ffe293; }
+.tag-green { background: rgba(52, 168, 83, 0.1); border: 1px solid rgba(52, 168, 83, 0.25); color: #a9ffc1; }
+
+/* ==========================================================================
+   6. Certification Grid & Lightbox Modal
+   ========================================================================== */
+.certs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem !important;
+    width: 100%;
+    max-width: 260px; 
+}
+
+.cert-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #1a202c; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.cert-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.zoom-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 17, 23, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.cert-wrapper:hover .zoom-overlay {
+    opacity: 1;
+}
+
+.cert-card figcaption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+/* Lightbox Modal Configuration (Default Hidden State Fixed) */
+.lightbox-modal {
+    display: none; /* Keeps modal hidden on initial page load */
+    position: fixed;
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 12, 16, 0.96); 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 80vh; 
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    animation: zoomAnimationIn 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes zoomAnimationIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--text-muted);
+    font-size: 40px;
+    font-weight: 300;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: var(--tech-red);
+}
+
+#lightboxCaption {
+    margin: 15px auto;
+    text-align: center;
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 500;
+    max-width: 700px;
+}
+
+/* ==========================================================================
+   7. Direct Transmission Social Footer
+   ========================================================================== */
+.footer-section {
+    padding: 100px 0 40px 0;
+}
+
+.footer-container {
+    padding: 50px 40px 20px 40px;
+}
+
+.footer-branding {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-branding h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.footer-branding p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.footer-link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(13, 17, 23, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.footer-link-card:hover {
+    background: rgba(33, 38, 45, 0.8);
+    border-color: var(--tech-blue);
+    transform: translateY(-3px);
+}
+
+.link-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(240, 246, 252, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.icon-linkedin { color: #0077b5; }
+.icon-github { color: #afb7c1; }
+
+.link-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.link-details span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.link-details strong {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer-bottom-bar p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. Core Global Buttons
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--tech-blue);
+    color: #fff;
+    border: 1px solid var(--tech-blue);
+}
+
+.btn-primary:hover {
+    background: rgba(26, 115, 232, 0.85);
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background: rgba(240, 246, 252, 0.05);
+    border-color: var(--text-main);
+}
+
+/* ==========================================================================
+   9. Mobile Optimization Viewport Blueprint
+   ========================================================================== */
+@media (max-width: 992px) {
+    .blog-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-image-wrapper {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}

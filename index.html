@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Professional & Systems Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome for Enterprise Branding Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Mathematical Ambient Vector Grid Background Layer -->
+  <canvas id="particleCanvas"></canvas>
+
+  <div class="portfolio-container">
+
+    <!-- ==========================================
+        1. HERO INTERFACE DEPLOYMENT
+        ========================================== -->
+    <header class="hero-section">
+      <div class="hero-content card-3d">
+        <div class="brand-accent-bar"></div>
+        <h1 class="glitch">IT Professional</h1>
+        <p class="subtitle">Finding Solutions That Work for People</p>
+        <p class="tagline">
+          My approach to IT is built on two pillars: robust technical expertise and human-centric problem-solving. With a strong foundation in hardware and software troubleshooting, I have expanded my toolkit to include advanced proficiencies in cloud architecture and generative AI integration.
+
+          Managing high-volume customer environments has taught me that solving a technical issue is only half the battle, the real value lies in resolving it with clarity, empathy, and speed. Whether I am architecting a cloud solution, deploying an AI tool, or automating a complex workflow, my goal is always the same: to design efficient, scalable infrastructure that works seamlessly for the people using it.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">Explore Case Studies</a>
+          <a href="#certifications" class="btn btn-secondary">Check out my Credentials</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==========================================
+          2. CORE CAPABILITIES MATRIX
+          ========================================== -->
+      <section class="section-padding" id="capabilities">
+        <h2 class="section-title">Core Capabilities</h2>
+        <div class="capabilities-grid">
+          
+          <div class="capability-card card-3d">
+            <div class="tech-icon icon-blue"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Crafting responsive, secure front-end systems using modern HTML5 semantic elements, advanced CSS Grid/Flexbox layouts, and optimized JavaScript engines.</p>
+          </div>
+
+          <div class="capability-card card-3d">
+            <div class="tech-icon icon-green"><i class="fa-solid fa-cubes"></i></div>
+            <h3>Systems Architecture</h3>
+            <p>Designing structured application blueprints built on robust logic, focusing on database reliability, clean version branches, and scalable content delivery.</p>
+          </div>
+
+          <div class="capability-card card-3d">
+            <div class="tech-icon icon-yellow"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Hardware Infrastructure</h3>
+            <p>Comprehensive technical problem-solving ranging from component-level logic diagnostic upgrades to full architectural desktop platform builds.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+          3. BLOG-STYLE ENGINEERING LOGS (PROJECTS)
+          ========================================== -->
+      <section class="section-padding" id="projects">
+        <h2 class="section-title">Engineering Logs & Case Studies</h2>
+        <div class="blog-grid">
+
+          <!-- Case Study Entry 1 -->
+          <article class="blog-card card-3d">
+            <div class="blog-image-wrapper">
+              <img src="./NodeHelp.png" alt="NodeHelp Responsive Interface" class="blog-image">
+              <span class="project-badge">Active Production</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-date"><i class="fa-regular fa-calendar"></i> May 2026</div>
+              <h3>NodeHelp: Responsive Support Request Dashboard</h3>
+              <p class="blog-excerpt">
+                A mission-critical technical portal and modern blogging system designed to optimize IT ticket parsing and resource sharing workflows.
+              </p>
+              <div class="blog-body-text">
+                <h4>What I Did:</h4>
+                <p>Architected the foundational application layout completely from scratch using robust ECMAScript logic paired with an immersive, user-friendly dark mode interface. Used fluid CSS Grid configurations to keep layout structures stable across changing device resolutions.</p>
+                <p>Engineered responsive component modules that compress neatly onto mobile screens without losing the technical context required by administrators.</p>
+              </div>
+              <div class="tech-tags">
+                <span class="tag-blue">HTML5</span>
+                <span class="tag-yellow">JavaScript ES6</span>
+                <span class="tag-green">CSS Grid / Flexbox</span>
+                <span class="tag-red">UI/UX Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study Entry 2 -->
+          <article class="blog-card card-3d">
+            <div class="blog-image-wrapper">
+              <img src="./GreenBeing.png" alt="Community Portal Interface Design" class="blog-image">
+              <span class="project-badge badge-alt">Collaborative System</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-date"><i class="fa-regular fa-calendar"></i> April 2026</div>
+              <h3>Mobile-Optimized Community Portal</h3>
+              <p class="blog-excerpt">
+                A lightweight, accessible responsive platform engineered to maximize community engagement and resource discovery on mobile viewports.
+              </p>
+              <div class="blog-body-text">
+                <h4>What I Did:</h4>
+                <p>Collaborated with project peers to map layout configurations, resolving accessibility bottlenecks to ensure quick page speeds on local mobile network bands.</p>
+                <p>Managed asset production pipelines, converting large raw graphics into ultra-optimized WebP configurations to drop time-to-first-paint latency on entry-level smartphones.</p>
+              </div>
+              <div class="tech-tags">
+                <span class="tag-blue">Mobile-First UI</span>
+                <span class="tag-green">Asset Compression</span>
+                <span class="tag-yellow">Git Version Control</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+          4. COMPACT CERTIFICATIONS GRID (ZOOM LIGHTBOX)
+          ========================================== -->
+      <section class="section-padding" id="certifications">
+        <h2 class="section-title">Verified Qualifications</h2>
+        <div class="certs-container">
+          <div class="cert-grid">
+            
+            <!-- Certificate 1 -->
+            <figure class="cert-card card-3d">
+              <div class="cert-wrapper" onclick="openLightbox('assets/cert-google-it-large.webp', 'Google IT Support Professional Certificate')">
+                <img src="./Certifications/Google IT Support Professional Certificate.png" loading="lazy" alt="Google IT Support Professional Certificate">
+                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Larger</div>
+              </div>
+              <figcaption>Google IT Support Professional</figcaption>
+            </figure>
+
+            <!-- Certificate 2 -->
+            <figure class="cert-card card-3d">
+              <div class="cert-wrapper" onclick="openLightbox('assets/cert-systems-dev-large.webp', 'Google AI Essentials Specialisation Certificate')">
+                <img src="./Certifications/Google AI Essentials Certificate.png" loading="lazy" alt="Google AI Essentials Certificate">
+                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Larger</div>
+              </div>
+              <figcaption>Google AI Essentials Specialisation Certificate</figcaption>
+            </figure>
+
+            <!-- Certificate 3 -->
+            <figure class="cert-card card-3d">
+              <div class="cert-wrapper" onclick="openLightbox('assets/cert-technical-support-large.webp', 'IBM Introduction to Technical Support Certificate')">
+                <img src="./Certifications/IBM Introduction to Technical Support .png" alt="IT Technical Support Qualification Certificate" loading="lazy">
+                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Larger</div>
+              </div>
+              <figcaption>IBM Introduction to Technical Support</figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+        5. SECURE DIRECT COMMUNICATION NETWORKS (FOOTER)
+        ========================================== -->
+    <footer class="footer-section" id="contact">
+      <div class="footer-container card-3d">
+        <div class="brand-accent-bar"></div>
+        
+        <div class="footer-branding">
+          <h2>Direct Communication Protocols</h2>
+          <p>Get in touch directly through any of the secure professional communication nodes below. Form friction has been decoupled for instant, modern workflow access.</p>
+        </div>
+
+        <div class="footer-links-grid">
+          
+          <!-- LinkedIn Hub -->
+          <a href="https://www.linkedin.com/in/waidon-cloete/" target="_blank" class="footer-link-card" rel="noopener noreferrer">
+            <div class="link-icon-circle icon-linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="link-details">
+              <span>Professional Matrix</span>
+              <strong>Connect on LinkedIn</strong>
+            </div>
+          </a>
+
+          <!-- GitHub Repository -->
+          <a href="https://github.com/waidon" target="_blank" class="footer-link-card" rel="noopener noreferrer">
+            <div class="link-icon-circle icon-github"><i class="fa-brands fa-github"></i></div>
+            <div class="link-details">
+              <span>Code Repository</span>
+              <strong>Follow on GitHub</strong>
+            </div>
+          </a>
+
+          <!-- Secure Email Link -->
+          <a href="mailto:waidonj11@gmail.com" class="footer-link-card" rel="noopener">
+            <div class="link-icon-circle icon-red"><i class="fa-solid fa-envelope"></i></div>
+            <div class="link-details">
+              <span>Electronic Mail</span>
+              <strong>waidonj11@gmail.com</strong>
+            </div>
+          </a>
+
+          <!-- Mobile Line Link -->
+          <a href="tel:+27733572537" class="footer-link-card">
+            <div class="link-icon-circle icon-green"><i class="fa-solid fa-phone"></i></div>
+            <div class="link-details">
+              <span>Direct Mobile Line</span>
+              <strong>+27 73 357 2537</strong>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="footer-bottom-bar">
+          <p>&copy; 2026. Engineered with premium performance metrics. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+      6. ENHANCED FULL-SCREEN OVERLAY LIGHTBOX MODAL
+      ========================================== -->
+  <div id="certLightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage" alt="Enlarged Document View">
+    <div id="lightboxCaption"></div>
+  </div>
+
+  <!-- ==========================================
+      7. CORE 3D ARCHITECTURE RUNTIME ENGINES
+      ========================================== -->
+  <script>
+    // --- ENGINE 1: Real-Time Dynamic 3D Matrix Projection Tracker ---
+    const cards = document.querySelectorAll('.card-3d');
+    
+    if (window.innerWidth > 992) {
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+          
+          const midX = rect.width / 2;
+          const midY = rect.height / 2;
+          const rotateX = ((y - midY) / midY) * -8;
+          const rotateY = ((x - midX) / midX) * 8;
+          
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+        });
+      });
+    }
+
+    // --- ENGINE 2: Ambient Low-Overhead Floating Background Grid ---
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 1.5 + 0.5;
+        this.speedY = Math.random() * -0.25 - 0.05;
+        this.alpha = Math.random() * 0.35 + 0.1;
+      }
+      update() {
+        this.y += this.speedY;
+        if (this.y < 0) {
+          this.y = canvas.height;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+      draw() {
+        ctx.fillStyle = `rgba(139, 148, 158, ${this.alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const denseAllocation = window.innerWidth > 768 ? 45 : 15;
+    for (let i = 0; i < denseAllocation; i++) {
+      particles.push(new Particle());
+    }
+
+    function renderLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(renderLoop);
+    }
+    renderLoop();
+
+    // --- ENGINE 3: Fast Lightbox Modal Controllers ---
+    function openLightbox(largeImageSrc, captionText) {
+      const lightbox = document.getElementById('certLightbox');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const lightboxCap = document.getElementById('lightboxCaption');
+      
+      if (largeImageSrc.includes('-large')) {
+        const clickedCard = event.currentTarget.closest('.cert-card');
+        if (clickedCard) {
+          const activeThumbnail = clickedCard.querySelector('.cert-wrapper img');
+          if (activeThumbnail) {
+            largeImageSrc = activeThumbnail.src;
+          }
+        }
+      }
+      
+      lightbox.style.display = "flex";
+      lightboxImg.src = largeImageSrc;
+      lightboxCap.innerHTML = captionText;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('certLightbox');
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  </script>
+</body>
+</html>
